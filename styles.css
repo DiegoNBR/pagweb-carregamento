@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00d9ff, #0808BD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.load-btn {
+    display: block;
+    margin: 0 auto 40px;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #00d9ff, #08088f);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.load-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+}
+
+.load-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: #1e2746;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    animation: fadeIn 2.0s ease;
+}
+
+.card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #a855f7;
+}
+
+.content {
+    flex: 1;
+}
+
+.content h3 {
+    color: #b0b0b0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.skeleton {
+    background: #2a3555;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255 ,255 ,255,0.08) 50%,
+        transparent 100%
+    );
+    animation: shimmer 1s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skeleton-card {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.skeleton-content {
+    flex: 1;
+}
+
+.skeleton-title {
+    height: 20px;
+    width: 60%;
+    margin-top: 12px;
+}
+
+.skeleton-text {
+    height: 14px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.skeleton-text.short {
+    width: 70%;
+}
